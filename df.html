@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+ 
+<title>imageness</title>
+
+</
+</head>
+<body>
+  
+  <
+
+ 
+<img id="imagenMostrada" src="">
+  
+  <
+
+ 
+<button id="botonAnterior">Anterior</button>
+  
+  <
+
+ 
+<button id="botonSiguiente">Siguiente</button>
+
+  
+
+ 
+
+
+<script>
+   
+
+    var imagenes = [
+      "p1.png",
+      "q2.png",
+      "q3.png",
+      "p2.png",
+      "x1.png"
+    ];
+
+    var indiceImagenActual = 0;
+    var imgMostrada = document.getElementById("imagenMostrada");
+    var botonAnterior = document.getElementById("botonAnterior");
+    var botonSiguiente = document.getElementById("botonSiguiente");
+
+    function mostrarImagenActual() {
+      imgMostrada.src = imagenes[indiceImagenActual];
+    }
+
+    function cambiarImagen(direccion) {
+      indiceImagenActual += direccion;
+      if (indiceImagenActual < 0) {
+        indiceImagenActual = imagenes.length - 1;
+      } else if (indiceImagenActual >= imagenes.length) {
+        indiceImagenActual = 0;
+      }
+      mostrarImagenActual();
+    }
+
+    botonAnterior.addEventListener("click", function() {
+      cambiarImagen(-1);
+    });
+
+    botonSiguiente.addEventListener("click", function() {
+      cambiarImagen(1);
+    });
+
+    // Mostrar la primera imagen al cargar la página
+    mostrarImagenActual();
+  </script>
+
+</
+</body>
+
+</
+</html>
+
+``
